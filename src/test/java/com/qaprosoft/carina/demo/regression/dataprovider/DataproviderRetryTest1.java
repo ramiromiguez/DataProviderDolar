@@ -31,18 +31,17 @@ import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
  */
 public class DataproviderRetryTest1 implements IAbstractTest {
 
-    @Test(dataProvider = "DP1", dataProviderClass=DataproviderRetryTest.class)
+    @Test(dataProvider = "DP1", dataProviderClass = DataproviderRetryTest.class)
     @MethodOwner(owner = "qpsdemo")
     public void testDataproviderRetry1(String testRailColumn, int a, int b, int c) {
         boolean isPassed = (new Random().nextInt(4) == 1) ? true : false;
         Assert.assertTrue(isPassed);
-        
+
         setCases(testRailColumn.split(","));
         int actual = a * b;
         int expected = c;
         Assert.assertEquals(actual, expected, "Invalid sum result!");
     }
-
 
 
 }

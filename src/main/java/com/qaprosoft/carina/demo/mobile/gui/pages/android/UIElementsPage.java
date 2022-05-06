@@ -53,17 +53,17 @@ public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
     }
 
     @Override
-    public String getEmail(){
+    public String getEmail() {
         return emailField.getText();
     }
 
     @Override
-    public String getText(){
+    public String getText() {
         return textField.getText();
     }
 
     @Override
-    public String getDate(){
+    public String getDate() {
         return dateField.getText();
     }
 
@@ -88,12 +88,12 @@ public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
     }
 
     @Override
-    public boolean isFemaleRadioButtonSelected(){
+    public boolean isFemaleRadioButtonSelected() {
         return femaleRadioButton.isChecked();
     }
 
     @Override
-    public boolean isOthersRadioButtonSelected(){
+    public boolean isOthersRadioButtonSelected() {
         return otherRadioButton.isChecked();
     }
 
@@ -103,7 +103,7 @@ public class UIElementsPage extends UIElementsPageBase implements IMobileUtils {
     }
 
     @Override
-    public boolean isCopyChecked(){
+    public boolean isCopyChecked() {
         return checkBoxButton.isChecked();
     }
 

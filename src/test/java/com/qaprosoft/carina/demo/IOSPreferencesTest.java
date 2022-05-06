@@ -23,7 +23,7 @@ import com.qaprosoft.carina.core.foundation.utils.mobile.IMobileUtils;
 import com.qaprosoft.carina.demo.mobile.gui.pages.ios.PreferencesPage;
 
 public class IOSPreferencesTest implements IAbstractTest, IMobileUtils {
-    
+
     @Test
     public void nativePreferencesTest() {
         WebDriver driver = getDriver();

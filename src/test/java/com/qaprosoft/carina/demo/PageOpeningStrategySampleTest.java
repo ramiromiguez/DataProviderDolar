@@ -32,7 +32,7 @@ public class PageOpeningStrategySampleTest implements IAbstractTest {
 
     @Test
     @MethodOwner(owner = "qpsdemo")
-    public void testByElementOpeningStrategy(){
+    public void testByElementOpeningStrategy() {
 
         SoftAssert softAssert = new SoftAssert();
 
@@ -41,7 +41,7 @@ public class PageOpeningStrategySampleTest implements IAbstractTest {
 
         homePage.setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
 
-        softAssert.assertTrue(homePage.isPageOpened(),"Home page is not opened");
+        softAssert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
         CompareModelsPage compareModelsPage = homePage.getFooterMenu().openComparePage();
         compareModelsPage.setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
@@ -53,14 +53,14 @@ public class PageOpeningStrategySampleTest implements IAbstractTest {
 
     @Test
     @MethodOwner(owner = "qpsdemo")
-    public void testByURLOpeningStrategy(){
+    public void testByURLOpeningStrategy() {
         SoftAssert softAssert = new SoftAssert();
         HomePage homePage = new HomePage(getDriver());
         homePage.open();
 
         homePage.setPageOpeningStrategy(PageOpeningStrategy.BY_URL);
 
-        softAssert.assertTrue(homePage.isPageOpened(),"Home page is not opened");
+        softAssert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
         CompareModelsPage compareModelsPage = homePage.getFooterMenu().openComparePage();
         compareModelsPage.setPageOpeningStrategy(PageOpeningStrategy.BY_URL);
@@ -78,7 +78,7 @@ public class PageOpeningStrategySampleTest implements IAbstractTest {
         homePage.open();
         homePage.setPageOpeningStrategy(PageOpeningStrategy.BY_URL_AND_ELEMENT);
 
-        softAssert.assertTrue(homePage.isPageOpened(),"Home page is not opened");
+        softAssert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
         CompareModelsPage compareModelsPage = homePage.getFooterMenu().openComparePage();
         compareModelsPage.setPageOpeningStrategy(PageOpeningStrategy.BY_URL_AND_ELEMENT);

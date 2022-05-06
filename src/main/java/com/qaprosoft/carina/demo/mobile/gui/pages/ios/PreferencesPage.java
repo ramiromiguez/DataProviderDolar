@@ -12,7 +12,7 @@ public class PreferencesPage extends AbstractPage {
     @FindBy(xpath = "**/XCUIElementTypeCell[`label == \"General\"`]")
     @ClassChain
     private ExtendedWebElement generalButton;
-    
+
     public PreferencesPage(WebDriver driver) {
         super(driver);
     }

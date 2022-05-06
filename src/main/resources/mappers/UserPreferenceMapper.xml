@@ -3,9 +3,9 @@
 
 <mapper namespace="com.qaprosoft.carina.demo.db.mappers.UserPreferenceMapper">
 
-	<insert id="create" useGeneratedKeys="true"
-		keyProperty="id">
-		<![CDATA[
+    <insert id="create" useGeneratedKeys="true"
+            keyProperty="id">
+        <![CDATA[
 			INSERT INTO carina.USER_PREFERENCES (NAME, VALUE, USER_ID)
 			VALUES (
 				#{name},
@@ -13,10 +13,10 @@
 				#{userId}
 			)
 		]]>
-	</insert>
-	
-	<sql id="getUserPreference">
-		<![CDATA[
+    </insert>
+
+    <sql id="getUserPreference">
+        <![CDATA[
 			SELECT
 				UP.ID AS USER_PREFERENCE_ID,
 				UP.NAME AS USER_PREFERENCE_NAME,
@@ -25,22 +25,22 @@
 			FROM
 				carina.USER_PREFERENCES UP
 		]]>
-	</sql>
+    </sql>
 
-	<select id="findById"
-		resultMap="UserPreferenceResultMap">
-		<include refid="getUserPreference" />
-		<![CDATA[
+    <select id="findById"
+            resultMap="UserPreferenceResultMap">
+        <include refid="getUserPreference"/>
+        <![CDATA[
 			WHERE UP.ID = #{id};
 		]]>
-	</select>
+    </select>
 
-	<resultMap type="com.qaprosoft.carina.demo.db.models.UserPreference"
-		id="UserPreferenceResultMap" autoMapping="false">
-		<id column="USER_PREFERENCE_ID" property="id" />
-		<result column="USER_PREFERENCE_NAME" property="name" />
-		<result column="USER_PREFERENCE_VALUE" property="value" />
-		<result column="USER_PREFERENCE_USER_ID" property="userId" />
-	</resultMap>
+    <resultMap type="com.qaprosoft.carina.demo.db.models.UserPreference"
+               id="UserPreferenceResultMap" autoMapping="false">
+        <id column="USER_PREFERENCE_ID" property="id"/>
+        <result column="USER_PREFERENCE_NAME" property="name"/>
+        <result column="USER_PREFERENCE_VALUE" property="value"/>
+        <result column="USER_PREFERENCE_USER_ID" property="userId"/>
+    </resultMap>
 
 </mapper>

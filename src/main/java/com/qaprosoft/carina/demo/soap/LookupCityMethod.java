@@ -14,7 +14,7 @@ import com.qaprosoft.carina.core.foundation.utils.Configuration;
 public class LookupCityMethod extends AbstractApiMethodV2 {
 
     public LookupCityMethod() {
-        replaceUrlPlaceholder("base_url",Configuration.getEnvArg("soap_url"));
+        replaceUrlPlaceholder("base_url", Configuration.getEnvArg("soap_url"));
         setHeaders(String.format("SOAPAction=%s", "http://tempuri.org/SOAP.Demo.LookupCity"));
     }
 }

@@ -48,9 +48,7 @@ public class DataprovidersSampleTest implements IAbstractTest {
      * - dsArgs - column names from spreadsheet
      *
      * @param a String
-     *
      * @param b String
-     *
      * @param c String
      */
     @Test(dataProvider = "DataProvider")
@@ -64,7 +62,6 @@ public class DataprovidersSampleTest implements IAbstractTest {
     }
 
     /**
-     *
      * Parametrization using external XLS/XLSX: every row in spreadsheet provides tests arguments as Map&lt;String, String&gt; for 1 test.
      * For datasets with huge number of columns just remove dsArgs parameter to return whole row as single map object
      * <p>
@@ -87,22 +84,18 @@ public class DataprovidersSampleTest implements IAbstractTest {
         int expected = Integer.valueOf(args.get("c"));
         Assert.assertEquals(actual, expected, "Invalid sum result!");
     }
-    
+
     /**
      * Paramatrization using TestNG dataproviders:
      * <p>
      * 1. Create data-provider method that returns Object[][] and set DataProvider annotation. 2. Specify data-provider
      * name in @Test annotation.
      *
-     * @param TUID String
-     *
+     * @param TUID           String
      * @param testRailColumn String
-     *
-     * @param a int
-     *
-     * @param b int
-     *
-     * @param c int
+     * @param a              int
+     * @param b              int
+     * @param c              int
      */
     @Test(dataProvider = "DP1")
     @MethodOwner(owner = "qpsdemo")
@@ -128,10 +121,9 @@ public class DataprovidersSampleTest implements IAbstractTest {
      * <p>
      * 1. List all parameter names in appropriate annotation. 2. Pass all parameters from TestNG xml file (check
      * test_suites/dataproviders.xml).
+     *
      * @param a int
-     *
      * @param b int
-     *
      * @param c int
      */
     @Test()

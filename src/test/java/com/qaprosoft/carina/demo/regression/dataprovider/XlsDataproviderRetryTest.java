@@ -30,7 +30,7 @@ import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 
 public class XlsDataproviderRetryTest implements IAbstractTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-    
+
     @Test(dataProvider = "DataProvider")
     @MethodOwner(owner = "qpsdemo")
     @XlsDataSourceParameters(path = "xls/demo.xlsx", sheet = "Data", dsUid = "TestTitle", dsArgs = "Args")
@@ -39,5 +39,5 @@ public class XlsDataproviderRetryTest implements IAbstractTest {
         boolean isPassed = (new Random().nextInt(3) == 1) ? true : false;
         Assert.assertTrue(isPassed);
     }
-    
+
 }

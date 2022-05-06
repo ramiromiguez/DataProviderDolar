@@ -1,8 +1,28 @@
 {
   "0": {
     "id": 1,
-    <#if name??>"name": "${name}",</#if>
-    <#if username??>"username": "${username}",</#if>
+    <
+    #
+    if
+    name
+    ?
+    ?
+    >
+    "name": "${name}",
+    </
+    #
+    if>
+    <
+    #
+    if
+    username
+    ?
+    ?
+    >
+    "username": "${username}",
+    </
+    #
+    if>
     "email": "Sincere@april.biz",
     "address": {
       "street": "Kulas Light",
@@ -22,5 +42,5 @@
       "bs": "harness real-time e-markets"
     }
   },
-    "id": 11
+  "id": 11
 }

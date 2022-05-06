@@ -56,7 +56,7 @@ public class WebMultipleBrowserTest implements IAbstractTest {
         Screenshot.capture(chromeHomePage.getDriver(), "Chrome capture!");
         Assert.assertFalse(CollectionUtils.isEmpty(news), "News not found!");
 
-        for(NewsItem n : news) {
+        for (NewsItem n : news) {
             System.out.println(n.readTitle());
             Assert.assertTrue(StringUtils.containsIgnoreCase(n.readTitle(), searchQ), "Invalid search results!");
         }

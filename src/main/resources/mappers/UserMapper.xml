@@ -3,8 +3,8 @@
 
 <mapper namespace="com.qaprosoft.carina.demo.db.mappers.UserMapper">
 
-	<insert id="create" useGeneratedKeys="true" keyProperty="id">
-		<![CDATA[
+    <insert id="create" useGeneratedKeys="true" keyProperty="id">
+        <![CDATA[
 			INSERT INTO carina.USERS (USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, EMAIL, STATUS)
 			VALUES (
 				#{username},
@@ -15,10 +15,10 @@
 				#{status}
 			)
 		]]>
-	</insert>
+    </insert>
 
-	<sql id="getUser">
-		<![CDATA[
+    <sql id="getUser">
+        <![CDATA[
 			SELECT
 				U.ID AS USER_ID,
 				U.USERNAME AS USER_USERNAME,
@@ -38,79 +38,79 @@
 			ON
 				UP.USER_ID = U.ID
 		]]>
-	</sql>
+    </sql>
 
-	<select id="findById" resultMap="UserResultMap">
-		<include refid="getUser" />
-		<![CDATA[
+    <select id="findById" resultMap="UserResultMap">
+        <include refid="getUser"/>
+        <![CDATA[
 			WHERE U.ID = #{id};
 		]]>
-	</select>
+    </select>
 
-	<select id="findByUserName" resultMap="UserResultMap">
-		<include refid="getUser" />
-		<![CDATA[
+    <select id="findByUserName" resultMap="UserResultMap">
+        <include refid="getUser"/>
+        <![CDATA[
 			WHERE U.USERNAME = #{username};
 		]]>
-	</select>
+    </select>
 
-	<update id="update">
-		<![CDATA[
+    <update id="update">
+        <![CDATA[
 			UPDATE
 			    carina.USERS
 		]]>
-		<set>
-			<if test="null != firstName">
-		            <![CDATA[
+        <set>
+            <if test="null != firstName">
+                <![CDATA[
 		               FIRST_NAME = #{firstName},
 		            ]]>
-			</if>
-			<if test="null != lastName">
-		            <![CDATA[
+            </if>
+            <if test="null != lastName">
+                <![CDATA[
 		               LAST_NAME = #{lastName},
 		            ]]>
-			</if>
-			<if test="null != email">
-		            <![CDATA[
+            </if>
+            <if test="null != email">
+                <![CDATA[
 		               EMAIL = #{email},
 		            ]]>
-			</if>
-			<if test="null != username">
-		            <![CDATA[
+            </if>
+            <if test="null != username">
+                <![CDATA[
 		               USERNAME = #{username},	
 		            ]]>
-			</if>
-			<if test="null != password">
-		            <![CDATA[
+            </if>
+            <if test="null != password">
+                <![CDATA[
 		               PASSWORD = #{password},	
 		            ]]>
-			</if>
-		</set>
-		<![CDATA[
+            </if>
+        </set>
+        <![CDATA[
 			WHERE
 			    ID = #{id}
 		]]>
-	</update>
+    </update>
 
-	<delete id="delete">
-		<![CDATA[
+    <delete id="delete">
+        <![CDATA[
 			DELETE FROM carina.USERS
 			WHERE ID = #{id}
 		]]>
-	</delete>
+    </delete>
 
-	<resultMap type="com.qaprosoft.carina.demo.db.models.User"
-		id="UserResultMap" autoMapping="false">
-		<id column="USER_ID" property="id" />
-		<result column="USER_USERNAME" property="username" />
-		<result column="USER_PASSWORD" property="password" />
-		<result column="USER_FIRST_NAME" property="firstName" />
-		<result column="USER_LAST_NAME" property="lastName" />
-		<result column="USER_EMAIL" property="email" />
-		<result column="USER_STATUS" property="status" />
-		<collection property="preferences"
-			ofType="com.qaprosoft.carina.demo.db.models.UserPreference"
-			resultMap="com.qaprosoft.carina.demo.db.mappers.UserPreferenceMapper.UserPreferenceResultMap" />
-	</resultMap>
+    <resultMap type="com.qaprosoft.carina.demo.db.models.User"
+               id="UserResultMap" autoMapping="false">
+        <id column="USER_ID" property="id"/>
+        <result column="USER_USERNAME" property="username"/>
+        <result column="USER_PASSWORD" property="password"/>
+        <result column="USER_FIRST_NAME" property="firstName"/>
+        <result column="USER_LAST_NAME" property="lastName"/>
+        <result column="USER_EMAIL" property="email"/>
+        <result column="USER_STATUS" property="status"/>
+        <collection property="preferences"
+                    ofType="com.qaprosoft.carina.demo.db.models.UserPreference"
+                    resultMap="com.qaprosoft.carina.demo.db.mappers.UserPreferenceMapper.UserPreferenceResultMap"/>
+    </resultMap>
 
 </mapper>

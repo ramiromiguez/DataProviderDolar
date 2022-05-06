@@ -49,7 +49,7 @@ public class WikipediaLocalePage extends AbstractPage {
     @FindBy(linkText = "{L10N:discussionElem}")
     private ExtendedWebElement discussionBtn;
 
-    public String getDiscussionText(){
+    public String getDiscussionText() {
         if (discussionBtn.isPresent()) {
             return discussionBtn.getText();
         }
@@ -60,22 +60,22 @@ public class WikipediaLocalePage extends AbstractPage {
         super(driver);
     }
 
-    public String getWelcomeText(){
+    public String getWelcomeText() {
         if (welcomeText.isPresent()) {
             return welcomeText.getText();
         }
         return "";
     }
 
-    public void hoverWelcomeText(){
+    public void hoverWelcomeText() {
         welcomeText.hover();
     }
 
-    public void hoverContribElem(){
+    public void hoverContribElem() {
         contribElem.hover();
     }
 
-    public void hoverCreateAccountElem(){
+    public void hoverCreateAccountElem() {
         createAccountElem.hover();
     }
 
@@ -83,8 +83,8 @@ public class WikipediaLocalePage extends AbstractPage {
         discussionElem.click();
     }
 
-    public void hoverHeaders(){
-        for (ExtendedWebElement pageLink: pageLinks) {
+    public void hoverHeaders() {
+        for (ExtendedWebElement pageLink : pageLinks) {
             pageLink.hover();
         }
     }

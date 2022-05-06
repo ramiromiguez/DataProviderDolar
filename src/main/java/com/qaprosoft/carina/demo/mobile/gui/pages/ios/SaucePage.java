@@ -7,13 +7,13 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.gui.AbstractPage;
 
 public class SaucePage extends AbstractPage {
-    
+
     @FindBy(id = "i_am_an_id")
     private ExtendedWebElement divElement;
-    
+
     @FindBy(id = "comments")
     private ExtendedWebElement textComment;
-    
+
     public SaucePage(WebDriver driver) {
         super(driver);
     }
@@ -21,7 +21,7 @@ public class SaucePage extends AbstractPage {
     public void verifyElementText() {
         divElement.assertElementWithTextPresent("I am a div");
     }
-    
+
     public void sendComment() {
         divElement.assertElementWithTextPresent("I am a div");
     }

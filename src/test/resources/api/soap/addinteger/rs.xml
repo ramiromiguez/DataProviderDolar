@@ -2,8 +2,8 @@
     <SOAP-ENV:Body>
         <AddIntegerResponse xmlns="http://tempuri.org">
             <#if firstNumber?? and secondNumber??>
-                <AddIntegerResult>${firstNumber+secondNumber}</AddIntegerResult>
-            </#if>
-        </AddIntegerResponse>
-    </SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
+            <AddIntegerResult>${firstNumber+secondNumber}</AddIntegerResult>
+        </#if>
+    </AddIntegerResponse>
+</SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>

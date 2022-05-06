@@ -47,8 +47,7 @@ public class ProxySampleTest implements IAbstractTest {
     BrowserMobProxy proxy;
 
     @BeforeMethod(alwaysRun = true)
-    public void startProxy()
-    {
+    public void startProxy() {
         R.CONFIG.put("browsermob_proxy", "true");
         getDriver();
         proxy = ProxyPool.getProxy();

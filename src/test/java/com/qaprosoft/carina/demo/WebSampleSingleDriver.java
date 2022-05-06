@@ -33,7 +33,7 @@ import com.qaprosoft.carina.demo.gui.pages.HomePage;
 
 /**
  * This sample shows how create Web test with dependent methods which shares existing driver between methods.
- * 
+ *
  * @author qpsdemo
  */
 public class WebSampleSingleDriver implements IAbstractTest {
@@ -46,7 +46,7 @@ public class WebSampleSingleDriver implements IAbstractTest {
         // Open GSM Arena home page and verify page is opened
         homePage = new HomePage(getDriver());
     }
-    
+
     @Test
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "regression"})
@@ -54,8 +54,8 @@ public class WebSampleSingleDriver implements IAbstractTest {
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
     }
-    
-    @Test(dependsOnMethods="testOpenPage") //for dependent tests Carina keeps driver sessions by default
+
+    @Test(dependsOnMethods = "testOpenPage") //for dependent tests Carina keeps driver sessions by default
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testOpenCompare() {
@@ -66,16 +66,16 @@ public class WebSampleSingleDriver implements IAbstractTest {
         comparePage = footerMenu.openComparePage();
 
     }
-    
-    @Test(dependsOnMethods="testOpenCompare") //for dependent tests Carina keeps driver sessions by default
+
+    @Test(dependsOnMethods = "testOpenCompare") //for dependent tests Carina keeps driver sessions by default
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "regression"})
     public void testReadSpecs() {
         // Compare 3 models
         specs = comparePage.compareModels("Samsung Galaxy J3", "Samsung Galaxy J5", "Samsung Galaxy J7 Pro");
     }
-    
-    @Test(dependsOnMethods="testReadSpecs") //for dependent tests Carina keeps driver sessions by default
+
+    @Test(dependsOnMethods = "testReadSpecs") //for dependent tests Carina keeps driver sessions by default
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"web", "acceptance"})
     public void testCompareModels() {
